@@ -1,0 +1,109 @@
+/* ==========================================================================
+   X Mentari — Design Tokens
+   Satu sumber kebenaran untuk warna, jarak, radius, dan tipografi.
+   Semua variabel diberi prefix --xmt- agar tidak bentrok dengan MUI.
+   ========================================================================== */
+
+:root,
+.xmt-scope {
+  /* Brand */
+  --xmt-brand: #f0872d;
+  --xmt-brand-strong: #d9701a;
+  --xmt-brand-soft: rgba(240, 135, 45, 0.14);
+  --xmt-brand-border: rgba(240, 135, 45, 0.36);
+
+  --xmt-accent: #3d99e3;
+  --xmt-accent-soft: rgba(61, 153, 227, 0.14);
+  --xmt-accent-border: rgba(61, 153, 227, 0.36);
+
+  /* Status */
+  --xmt-success: #4caf50;
+  --xmt-success-soft: rgba(76, 175, 80, 0.14);
+  --xmt-warning: #ff9800;
+  --xmt-warning-soft: rgba(255, 152, 0, 0.14);
+  --xmt-danger: #f4483b;
+  --xmt-danger-soft: rgba(244, 72, 59, 0.14);
+  --xmt-info: var(--xmt-accent);
+
+  /* Permukaan — tema gelap sebagai default */
+  --xmt-bg: #10141b;
+  --xmt-bg-raised: #161c26;
+  --xmt-surface: rgba(255, 255, 255, 0.04);
+  --xmt-surface-hover: rgba(255, 255, 255, 0.07);
+  --xmt-surface-active: rgba(255, 255, 255, 0.1);
+  --xmt-border: rgba(255, 255, 255, 0.1);
+  --xmt-border-strong: rgba(255, 255, 255, 0.18);
+  --xmt-overlay: rgba(8, 11, 16, 0.62);
+
+  /* Teks */
+  --xmt-text: #e6ecf5;
+  --xmt-text-muted: rgba(230, 236, 245, 0.66);
+  --xmt-text-faint: rgba(230, 236, 245, 0.42);
+  --xmt-text-on-brand: #ffffff;
+
+  /* Jarak — skala 4px */
+  --xmt-space-1: 4px;
+  --xmt-space-2: 8px;
+  --xmt-space-3: 12px;
+  --xmt-space-4: 16px;
+  --xmt-space-5: 20px;
+  --xmt-space-6: 24px;
+
+  /* Radius */
+  --xmt-radius-sm: 6px;
+  --xmt-radius-md: 10px;
+  --xmt-radius-lg: 14px;
+  --xmt-radius-pill: 999px;
+
+  /* Tipografi */
+  --xmt-font: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --xmt-font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+  --xmt-text-xs: 11px;
+  --xmt-text-sm: 12px;
+  --xmt-text-md: 13px;
+  --xmt-text-lg: 15px;
+  --xmt-text-xl: 18px;
+
+  /* Elevasi */
+  --xmt-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.24);
+  --xmt-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --xmt-shadow-lg: 0 16px 44px rgba(0, 0, 0, 0.42);
+
+  /* Gerak */
+  --xmt-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --xmt-duration: 180ms;
+
+  /* Lapisan — tetap di bawah nilai maksimum agar dialog MUI bisa menimpa bila perlu */
+  --xmt-z-fab: 2147483000;
+  --xmt-z-panel: 2147483100;
+  --xmt-z-overlay: 2147483200;
+  --xmt-z-toast: 2147483300;
+}
+
+/* Tema terang, diaktifkan oleh base.js saat MENTARI memakai mode terang */
+.xmt-scope.xmt-theme-light {
+  --xmt-bg: #ffffff;
+  --xmt-bg-raised: #f6f8fc;
+  --xmt-surface: rgba(15, 23, 42, 0.04);
+  --xmt-surface-hover: rgba(15, 23, 42, 0.07);
+  --xmt-surface-active: rgba(15, 23, 42, 0.1);
+  --xmt-border: rgba(15, 23, 42, 0.12);
+  --xmt-border-strong: rgba(15, 23, 42, 0.2);
+  --xmt-overlay: rgba(15, 23, 42, 0.34);
+
+  --xmt-text: #16202e;
+  --xmt-text-muted: rgba(22, 32, 46, 0.68);
+  --xmt-text-faint: rgba(22, 32, 46, 0.45);
+
+  --xmt-shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.1);
+  --xmt-shadow-md: 0 8px 24px rgba(15, 23, 42, 0.12);
+  --xmt-shadow-lg: 0 16px 44px rgba(15, 23, 42, 0.16);
+}
+
+/* Hormati preferensi pengguna yang mengurangi animasi */
+@media (prefers-reduced-motion: reduce) {
+  :root,
+  .xmt-scope {
+    --xmt-duration: 1ms;
+  }
+}

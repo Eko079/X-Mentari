@@ -1,0 +1,24 @@
+{
+  "name": "x-mentari",
+  "version": "2.2.0",
+  "description": "Chrome extension MV3 untuk MENTARI & MY UNPAM: forum tracker, notifikasi balasan dosen, asisten AI multi-penyedia, rekap presensi",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "node node_modules/eslint/bin/eslint.js src scripts",
+    "lint:fix": "node node_modules/eslint/bin/eslint.js src scripts --fix",
+    "test": "node scripts/test.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "check:manifest": "node scripts/check-manifest.mjs",
+    "verify": "npm run check:manifest && npm run lint && npm test && npm run smoke",
+    "zip": "node scripts/build-zip.mjs"
+  },
+  "devDependencies": {
+    "eslint": "9.15.0",
+    "globals": "15.12.0",
+    "jsdom": "25.0.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,89 @@
+/* X Mentari — popup ekstensi */
+
+@import url('../styles/tokens.css');
+@import url('../styles/components.css');
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  width: 340px;
+  margin: 0;
+  background: var(--xmt-bg);
+  color: var(--xmt-text);
+  font-family: var(--xmt-font);
+  font-size: var(--xmt-text-md);
+}
+
+body.xmt-theme-light {
+  color-scheme: light;
+}
+
+.pop-head {
+  display: flex;
+  align-items: center;
+  gap: var(--xmt-space-3);
+  padding: var(--xmt-space-4);
+  border-bottom: 1px solid var(--xmt-border);
+  background: var(--xmt-bg-raised);
+}
+
+.pop-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--xmt-radius-md);
+  background: var(--xmt-brand);
+  color: var(--xmt-text-on-brand);
+  font-size: var(--xmt-text-xl);
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.pop-title {
+  font-size: var(--xmt-text-lg);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.pop-sub {
+  font-size: var(--xmt-text-xs);
+  color: var(--xmt-text-muted);
+}
+
+.pop-tabs {
+  display: flex;
+  gap: var(--xmt-space-1);
+  padding: var(--xmt-space-2) var(--xmt-space-3) 0;
+}
+
+.pop-body {
+  max-height: 460px;
+  padding: var(--xmt-space-3);
+  overflow-y: auto;
+}
+
+.pop-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.pop-body::-webkit-scrollbar-thumb {
+  background: var(--xmt-border-strong);
+  border-radius: var(--xmt-radius-pill);
+}
+
+.pop-foot {
+  padding: var(--xmt-space-2) var(--xmt-space-4);
+  border-top: 1px solid var(--xmt-border);
+  background: var(--xmt-bg-raised);
+  font-size: 10px;
+  color: var(--xmt-text-faint);
+  text-align: center;
+}
+
+.pop-body .xmt-card + .xmt-card {
+  margin-top: var(--xmt-space-2);
+}

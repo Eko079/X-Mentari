@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>X Mentari — Pengaturan Penyedia AI</title>
+    <link rel="stylesheet" href="../styles/tokens.css" />
+    <link rel="stylesheet" href="../styles/components.css" />
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body class="xmt-scope">
+    <header class="opt-head">
+      <div class="opt-head-inner">
+        <div class="opt-brand">
+          <div class="opt-mark" aria-hidden="true">X</div>
+          <div>
+            <div class="opt-title">X Mentari</div>
+            <div class="opt-subtitle">Pengaturan Penyedia AI</div>
+          </div>
+        </div>
+        <a class="xmt-btn" href="https://github.com" id="opt-help" target="_blank" rel="noopener noreferrer" hidden>Bantuan</a>
+      </div>
+    </header>
+
+    <main class="opt-main">
+      <section class="opt-intro" id="opt-intro"></section>
+
+      <div class="opt-columns">
+        <section class="opt-col" aria-label="Daftar penyedia">
+          <div class="opt-col-head">
+            <h2 class="opt-col-title">Penyedia</h2>
+            <button type="button" class="xmt-btn" data-variant="primary" id="opt-add">Tambah penyedia</button>
+          </div>
+          <div id="opt-list" class="xmt-stack"></div>
+        </section>
+
+        <section class="opt-col" aria-label="Editor penyedia">
+          <div id="opt-editor"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="opt-foot" id="opt-foot"></footer>
+
+    <script src="../shared/constants.js"></script>
+    <script src="../shared/storage.js"></script>
+    <script src="../shared/util.js"></script>
+    <script src="../shared/dom.js"></script>
+    <script src="../shared/providers.js"></script>
+    <script src="../shared/ai.js"></script>
+    <script src="../content/base.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

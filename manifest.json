@@ -1,0 +1,112 @@
+{
+  "manifest_version": 3,
+  "name": "X Mentari",
+  "version": "2.2.0",
+  "description": "Asisten MENTARI & MY UNPAM: pelacak forum, notifikasi balasan dosen, asisten AI multi-penyedia, dan rekap presensi.",
+  "minimum_chrome_version": "116",
+
+  "permissions": ["storage"],
+
+  "optional_permissions": ["scripting"],
+
+  "host_permissions": [
+    "https://mentari.unpam.ac.id/*",
+    "https://my.unpam.ac.id/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+
+  "optional_host_permissions": ["https://*/*", "http://localhost/*", "http://127.0.0.1/*"],
+
+  "background": {
+    "service_worker": "src/background/service-worker.js"
+  },
+
+  "options_ui": {
+    "page": "src/options/options.html",
+    "open_in_tab": true
+  },
+
+  "action": {
+    "default_title": "X Mentari",
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "src/assets/icon.png",
+      "48": "src/assets/icon.png",
+      "128": "src/assets/icon.png"
+    }
+  },
+
+  "icons": {
+    "16": "src/assets/icon.png",
+    "48": "src/assets/icon.png",
+    "128": "src/assets/icon.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://mentari.unpam.ac.id/*"],
+      "exclude_matches": ["https://mentari.unpam.ac.id/login*"],
+      "css": ["src/styles/tokens.css", "src/styles/components.css"],
+      "js": [
+        "src/shared/constants.js",
+        "src/shared/storage.js",
+        "src/shared/util.js",
+        "src/shared/dom.js",
+        "src/shared/campus.js",
+        "src/shared/providers.js",
+        "src/shared/ai.js",
+        "src/content/base.js",
+        "src/content/settings.js",
+        "src/content/guide.js",
+        "src/content/forumTracker.js",
+        "src/content/aiAssistant.js",
+        "src/content/discussion.js",
+        "src/content/quizHelper.js",
+        "src/content/survey.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://my.unpam.ac.id/*"],
+      "exclude_matches": ["https://my.unpam.ac.id/login*"],
+      "css": ["src/styles/tokens.css", "src/styles/components.css"],
+      "js": [
+        "src/shared/constants.js",
+        "src/shared/storage.js",
+        "src/shared/util.js",
+        "src/shared/dom.js",
+        "src/shared/campus.js",
+        "src/shared/providers.js",
+        "src/shared/ai.js",
+        "src/content/base.js",
+        "src/content/presensi.js",
+        "src/content/survey.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://mentari.unpam.ac.id/login*",
+        "https://my.unpam.ac.id/login*"
+      ],
+      "js": [
+        "src/shared/constants.js",
+        "src/shared/storage.js",
+        "src/shared/util.js",
+        "src/content/login.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["src/assets/icon.png"],
+      "matches": ["https://mentari.unpam.ac.id/*", "https://my.unpam.ac.id/*"]
+    }
+  ],
+
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

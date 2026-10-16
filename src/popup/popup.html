@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>X Mentari</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body class="xmt-scope">
+    <header class="pop-head">
+      <div class="pop-mark" aria-hidden="true">X</div>
+      <div>
+        <div class="pop-title">X Mentari</div>
+        <div class="pop-sub" id="pop-version">Assistant MENTARI &amp; MY UNPAM</div>
+      </div>
+    </header>
+
+    <nav class="pop-tabs xmt-tabs" role="tablist" aria-label="Bagian pengaturan">
+      <button class="xmt-tab" role="tab" id="tab-status" aria-controls="panel-status" aria-selected="true" data-tab="status">
+        Status
+      </button>
+      <button class="xmt-tab" role="tab" id="tab-features" aria-controls="panel-features" aria-selected="false" data-tab="features">
+        Fitur
+      </button>
+      <button class="xmt-tab" role="tab" id="tab-about" aria-controls="panel-about" aria-selected="false" data-tab="about">
+        Tentang
+      </button>
+    </nav>
+
+    <main class="pop-body">
+      <div class="xmt-tabpanel" role="tabpanel" id="panel-status" aria-labelledby="tab-status"></div>
+      <div class="xmt-tabpanel" role="tabpanel" id="panel-features" aria-labelledby="tab-features" hidden></div>
+      <div class="xmt-tabpanel" role="tabpanel" id="panel-about" aria-labelledby="tab-about" hidden></div>
+    </main>
+
+    <footer class="pop-foot" id="pop-foot"></footer>
+
+    <script src="../shared/constants.js"></script>
+    <script src="../shared/storage.js"></script>
+    <script src="../shared/util.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
